@@ -21,6 +21,8 @@ var startButton = $('#startBtn')
 var resetButton = $('#resetBtn')
 resetButton.on('click', function(){
   $('.faceUp').toggleClass('faceDown')
+  $('#turnSwap').fadeOut()
+  $('#winner').fadeOut()
   $('#container').append($("<div id='startScreen'><p>Prove that you are the best cat herder!<p>Collect all the cats in order and try to beat your opponent's time.</p></p><p>Hit the Start button when you're ready to go!</p><p>Remember: Cats are skittish so if you try to collect them out of order they'll all run to a new location</p></div>").hide().fadeIn())
   game.player1.time = 0
   game.player1.turn = true
@@ -160,12 +162,20 @@ function endTurn(){
 function endGame(){
   $('.card').fadeOut()
   setTimeout(function(){
-    if (game.player1.time<game.player2.time){
-      $('#container').append($("<div id= 'winner'><p>Player 1 is the winner!</p><p>They beat player 2 by "+(game.player2.time-game.player1.time)+" seconds!</p><img class='ribbon' src='images/ribbon.png' alt='ribbon'></div>").hide().fadeIn())
-    } else if (game.player2.time<game.player1.time){
-      $('#container').append($("<div id= 'winner'><p>Player 2 is the winner!</p><p>They beat player 1 by "+(game.player1.time-game.player2.time)+" seconds!</p><img class='ribbon' src='images/ribbon.png' alt='ribbon'></div>").hide().fadeIn())
+    if ((game.player2.time - game.player1.time == 1) || (game.player1.time - game.player2.time == 1)){
+      if (game.player1.time<game.player2.time){
+        $('#container').append($("<div id= 'winner'><p>Player 1 is the winner!</p><p>They beat player 2 by "+(game.player2.time-game.player1.time)+" second!</p><img class='ribbon' src='images/ribbon.png' alt='ribbon'></div>").hide().fadeIn())
+      } else if (game.player2.time<game.player1.time){
+        $('#container').append($("<div id= 'winner'><p>Player 2 is the winner!</p><p>They beat player 1 by "+(game.player1.time-game.player2.time)+" second!</p><img class='ribbon' src='images/ribbon.png' alt='ribbon'></div>").hide().fadeIn())
+      }
     } else {
-      $('#container').append($("<div id= 'winner'><p>Tie! Everyone Wins!</p><img class='ribbon' src='images/ribbon.png' alt='ribbon'><img class='ribbon' src='images/ribbon.png' alt='ribbon'></div>").hide().fadeIn())
+      if (game.player1.time<game.player2.time){
+        $('#container').append($("<div id= 'winner'><p>Player 1 is the winner!</p><p>They beat player 2 by "+(game.player2.time-game.player1.time)+" seconds!</p><img class='ribbon' src='images/ribbon.png' alt='ribbon'></div>").hide().fadeIn())
+      } else if (game.player2.time<game.player1.time){
+        $('#container').append($("<div id= 'winner'><p>Player 2 is the winner!</p><p>They beat player 1 by "+(game.player1.time-game.player2.time)+" seconds!</p><img class='ribbon' src='images/ribbon.png' alt='ribbon'></div>").hide().fadeIn())
+      } else {
+        $('#container').append($("<div id= 'winner'><p>Tie! Everyone Wins!</p><img class='ribbon' src='images/ribbon.png' alt='ribbon'><img class='ribbon' src='images/ribbon.png' alt='ribbon'></div>").hide().fadeIn())
+      }
     }
   },600)
 }
