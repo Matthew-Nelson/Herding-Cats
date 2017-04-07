@@ -1,0 +1,169 @@
+body {
+	margin:0;
+	padding: 0;
+	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/background.gif');
+}
+header {
+	text-align: center;
+	background-color: rgba(239, 198, 47, 1.0);
+	margin: 0;
+	width: 100%;
+}
+.headerCat{
+	width:70px;
+	height:70px;
+	display: inline-block;
+	margin-top: 15px;
+	position: relative;
+}
+.leftCat{
+	margin-right: 100px;
+}
+.rightCat{
+	margin-left: 100px;
+}
+h1{
+	height: 100px;
+	color: black;
+	margin-top: 0;
+	font-size: 70px;
+  margin-bottom: 15px;
+}
+#startScreen, #turnSwap, #winner{
+	position: absolute;
+	z-index: 3;
+	border: 3px solid black;
+  border-radius: 10px;
+  background-color: silver;
+  margin: 39px;
+  width: auto;
+  text-align: center;
+	font-size: 22px;
+  color: black;
+  width: 700px;
+}
+#player1{
+	float: left;
+	margin-left: 21px;
+}
+#player2{
+	float: right;
+	margin-right: 21px;
+}
+.player{
+	width: 200px;
+	text-align: center;
+	font-size: 30px;
+	position: relative;
+	overflow: hidden;
+	background-position: center;
+	border: black solid 3px;
+	background-image: url('images/playerback.png');
+	background-size: 200%;
+}
+.playerimg {
+	height: 250px;
+	width: auto;
+}
+.playertext {
+	background-color: silver;
+	margin-left: 10px;
+	margin-right: 10px;
+	border: 3px solid black;
+	border-radius: 8px;
+}
+#container {
+	width: 784px;
+  height: 392px;
+  background-color: rgba(239, 198, 47, 1.0);
+  margin: 0 auto;
+  border: 3px solid black;
+}
+.card {
+	perspective: 1000px;
+	border: 2px solid black;
+	float: left;
+	margin: 1px;
+}
+.card.faceDown .contents {
+	transform: rotateY(180deg);
+}
+.card, .front, .back, .front img, .back img {
+	width: 92px;
+	height: 92px;
+	border-radius: 10px;
+}
+.contents {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.front, .back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+  background-color: grey;
+}
+img.frontal{
+	position: absolute;
+}
+p.frontal{
+	position: relative;
+	font-size: 83px;
+	text-align: center;
+	margin: 0;
+	color: rgba(255, 255, 255, 0.75);
+}
+.back {
+	transform: rotateY(180deg);
+  background-color: grey
+}
+.turnSwap {
+	align-items: center;
+	position: absolute;
+	margin: 0 auto;
+}
+.turnSwap p {
+	text-align: center;
+	position: relative;
+	font-size: 34px;
+}
+#bigContainer{
+	width: 100%;
+	position: relative;
+}
+#buttonWrapper {
+	width: 23%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;;
+	border-radius: 8px;
+	border: solid black 3px;
+}
+#startBtn{
+	background-color: silver;
+}
+#resetBtn{
+	background: red;
+}
+.ribbon{
+	height:185px;
+	width: auto;
+}
