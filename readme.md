@@ -11,12 +11,20 @@ Two players compete against each other to click the cards in the correct order (
 #### How to Play:
 Use the mouse to select the correct card on the randomized grid. Go as fast as possible without making mistakes.
 
-Play Catcallr <a href="https://matthewnelson18.github.io/Herding-Cats/" title="HerdingCats"> here</a>.
+Play Herding Cats <a href="https://matthewnelson18.github.io/Herding-Cats/" title="HerdingCats"> here</a>.
 
 ---
 
 ### Development & Technologies
 Herding Cats was built using HTML, CSS, Javascript, and the JQuery library.
+
+---
+### User Stories
++ As a player, I want to clearly see what cat I have to click next.
++ As a player, I want to clearly see my time.
++ As a player, I want to be able to reset the game without refreshing.
++ As a player I want to have clear instructions.
++ As a developer, I want modular code that will be easy to utilize in multiple situations.
 
 ---
 ### MVP
