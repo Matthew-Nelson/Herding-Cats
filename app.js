@@ -62,14 +62,8 @@ function setStartButton(){
 
 function shuffle(array) {
   var m = array.length, t, i;
-
-  // While there remain elements to shuffle…
   while (m) {
-
-    // Pick a remaining element…
     i = Math.floor(Math.random() * m--);
-
-    // And swap it with the current element.
     t = array[m];
     array[m] = array[i];
     array[i] = t;
@@ -79,7 +73,6 @@ function shuffle(array) {
 
 function appendFaceUp(i){
   $('#container').append("<div class='card faceUp faceDown'><div class='contents'><div class='front'><img class='frontal' src='images/front.png'><p class='frontal'>"+newArray[i]+"<p></div><div class='back'><img src='images/back.png'></div></div></div>")
-  //$('.faceUp').toggleClass('faceDown')
 }
 
 function faceUpGrid(){
@@ -91,12 +84,10 @@ function faceUpGrid(){
       appendFaceUp(i)
     }
   }
-  //$('.faceUp').toggleClass('faceDown')
   makeClickable()
   setTimeout(function(){
     $('.faceUp').toggleClass('faceDown')
   }, 100)
-
 }
 
 function appendFaceDown(){
@@ -116,11 +107,6 @@ function makeClickable(){
       $(this).toggleClass('faceDown')
       $(this).toggleClass('faceUp')
       nextNumber = nextNumber + 1
-      // if(fx.beep.paused) {
-      //   fx.beep.play()
-      // } else {
-      //   fx.beep.pause()
-      // }
     }
     else {
       $('.faceUp').toggleClass('faceDown')

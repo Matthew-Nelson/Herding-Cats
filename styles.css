@@ -156,6 +156,7 @@ p.frontal{
 	font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;;
 	border-radius: 8px;
 	border: solid black 3px;
+	margin-top: 19px;
 }
 #startBtn{
 	background-color: silver;
